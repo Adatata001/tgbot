@@ -1,0 +1,16 @@
+.env
+.env.local
+*.pyc
+__pycache__/
+.pytest_cache/
+.vscode/
+.idea/
+venv/
+env/
+dist/
+build/
+*.egg-info/
+.DS_Store
+node_modules/
+.coverage
+htmlcov/

@@ -1,0 +1,19 @@
+{
+  "premium_plans": {
+    "1month": {
+      "label": "1 Month",
+      "stars": 400,
+      "days": 30
+    },
+    "3months": {
+      "label": "3 Months",
+      "stars": 1080,
+      "days": 90
+    },
+    "1year": {
+      "label": "1 Year",
+      "stars": 3600,
+      "days": 365
+    }
+  }
+}
