@@ -14,11 +14,11 @@ from aiogram.fsm.state import State, StatesGroup
 from config import Config
 from app.keyboards import get_main_keyboard, get_upload_keyboard
 from app.services.supabase_service import supabase_service
-from app.services.openai_service import OpenAIService
+from app.services.openrouter_service import OpenRouterService
 
 logger = logging.getLogger(__name__)
 router = Router()
-openai_service = OpenAIService()
+openrouter_service = OpenRouterService()
 
 
 class UploadStates(StatesGroup):
@@ -109,7 +109,7 @@ async def handle_photo_upload(message: types.Message, state: FSMContext):
         image_bytes = await read_downloaded_file(file_obj)
         image_base64 = base64.b64encode(image_bytes).decode()
 
-        analysis = await analyze_image_with_vision(image_base64, data.get("upload_type", "screenshot"))
+        analysis = await openrouter_service.analyze_image_with_vision(image_base64, data.get("upload_type", "screenshot"))
         await processing.delete()
 
         await message.answer(

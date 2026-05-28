@@ -1,12 +1,12 @@
 """
-AI service for analysis via OpenAI-compatible APIs
+AI service for analysis via OpenRouter-compatible APIs
 """
 from openai import AsyncOpenAI
 from config import Config
 
 
-class OpenAIService:
-    """Service for interacting with OpenAI-compatible chat APIs."""
+class OpenRouterService:
+    """Service for interacting with OpenRouter-compatible chat APIs."""
     
     def __init__(self):
         if Config.OPENROUTER_API_KEY:
